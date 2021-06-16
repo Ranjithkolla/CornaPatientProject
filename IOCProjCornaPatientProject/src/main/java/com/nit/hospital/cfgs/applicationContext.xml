@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- DataSource cfg -->
+	 <bean id="dmds"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	     <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+	     <property name="url"  value="jdbc:mysql://localhost:3306/test"/>
+	     <property name="username" value="root"/>
+	     <property name="password" value="ecil@123"/>
+	 </bean>
+	 <!-- DAO class cfg -->
+	 <bean id="patientDAO"   class="com.nit.hospital.dao.PatientDAOImpl">
+	       <constructor-arg name="ds"  ref="dmds"/>
+	 </bean>
+	 
+	 <!-- service class cfg -->
+	 <bean id="patientService"  class="com.nit.hospital.service.PatientMgmtServiceImpl">
+	      <constructor-arg name="dao" ref="patientDAO"/>
+	 </bean>
+	 
+	 <!-- Controller class cfg -->
+	 <bean id="controller"  class="com.nit.controller.hospital.MainController">
+	         <constructor-arg  name="service" ref="patientService"/>
+	 </bean>
+</beans>
