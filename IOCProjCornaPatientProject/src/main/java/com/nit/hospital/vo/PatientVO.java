@@ -1,5 +1,7 @@
 package com.nit.hospital.vo;
 
+
+
 public class PatientVO 
 {
 private String patientName;
@@ -38,11 +40,9 @@ public String getBillPerDay() {
 public void setBillPerDay(String billPerDay) {
 	this.billPerDay = billPerDay;
 }
-@Override
-public String toString() {
-	return "PatientVO [patientName=" + patientName + ", patientAddress=" + patientAddress + ", mobileNumber="
-			+ mobileNumber + ", noOfDays=" + noOfDays + ", billPerDay=" + billPerDay + "]";
-}
+@Override 
+public String toString(){return "PatientVO [patientName=" + patientName + ", patientAddress=" + patientAddress + ", mobileNumber=" + mobileNumber + ", noOfDays=" + noOfDays + ", billPerDay=" + billPerDay + "]";}
+
 
 
 }

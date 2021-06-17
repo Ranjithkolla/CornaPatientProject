@@ -18,7 +18,6 @@ public class PatientDAOImpl implements IPatientDAO
 	}
 
 
-	@Override
 	public int insert(PatientBO bo) throws Exception {
 		Connection con=null;
 		PreparedStatement ps=null;

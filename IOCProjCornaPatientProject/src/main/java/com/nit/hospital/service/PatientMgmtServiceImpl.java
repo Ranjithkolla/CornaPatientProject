@@ -12,7 +12,7 @@ public PatientMgmtServiceImpl(IPatientDAO dao)
 	 System.out.println("PatientMgmtServiceImpl.1-param constructor");
 	 this.dao=dao;
 }
-@Override
+
 public String calculatePatientBill(PatientDTO dto) throws Exception {
 	// TODO Auto-generated method stub
 	
